@@ -33,24 +33,6 @@ busybox mount -t yaffs2 ${BOOTREC_CACHE} /cache
 busybox echo 1024000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 busybox echo 122000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
-# trigger lime green LED & button-backlight
-busybox echo 25 > ${BOOTREC_LED_RED}
-busybox echo 255 > ${BOOTREC_LED_GREEN}
-busybox echo 0 > ${BOOTREC_LED_BLUE}
-busybox echo 255 > ${BOOTREC_LED_BUTTONS}
-busybox echo 50 > ${BOOTREC_VIBRATOR}
-busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
-busybox sleep 1
-
-# trigger pink LED & button-backlight
-busybox echo 100 > ${BOOTREC_LED_RED}
-busybox echo 35 > ${BOOTREC_LED_GREEN}
-busybox echo 50 > ${BOOTREC_LED_BLUE}
-busybox echo 255 > ${BOOTREC_LED_BUTTONS}
-busybox echo 50 > ${BOOTREC_VIBRATOR}
-busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
-busybox sleep 1
-
 # trigger aqua blue LED & button-backlight
 busybox echo 0 > ${BOOTREC_LED_RED}
 busybox echo 100 > ${BOOTREC_LED_GREEN}
