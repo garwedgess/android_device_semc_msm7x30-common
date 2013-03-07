@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
 
 #Hal
 PRODUCT_PACKAGES += \
+    power.semc \
     gps.semc \
     lights.semc \
     camera.semc \
