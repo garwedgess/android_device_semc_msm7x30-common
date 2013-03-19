@@ -71,7 +71,7 @@ public class SemcRIL extends RIL implements CommandsInterface {
             dataCall.ifname = "rmnet0";
         } else {
             dataCall.status = p.readInt();
-dataCall.suggestedRetryTime = p.readInt();
+	          dataCall.suggestedRetryTime = p.readInt();
             dataCall.cid = p.readInt();
             dataCall.active = p.readInt();
             dataCall.type = p.readString();
@@ -226,7 +226,7 @@ dataCall.suggestedRetryTime = p.readInt();
         int response = p.readInt();
 
         switch(response) {
-            case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: ret = responseVoid(p); break;
+            case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: ret =  responseVoid(p); break;
             case 1036: ret = responseVoid(p); break; // RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED
 
             default:
